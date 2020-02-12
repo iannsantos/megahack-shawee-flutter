@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "345334604377",
+    "firebase_url": "https://investschool-3b9cf.firebaseio.com",
+    "project_id": "investschool-3b9cf",
+    "storage_bucket": "investschool-3b9cf.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:345334604377:android:0b14680a05d4d64e884748",
+        "android_client_info": {
+          "package_name": "com.example.invest_school"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "345334604377-d39b4jo35b0m985lnpqq2ashfpfqi31f.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.invest_school",
+            "certificate_hash": "53a9decb5b6c4834a35c7344690f6d98ca6f0960"
+          }
+        },
+        {
+          "client_id": "345334604377-2alm50ctk558ais2c4gsua5fr5fukrp5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD5t55rfWEWJ2WBYCUsDOR6etkscyfZ3EU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "345334604377-2alm50ctk558ais2c4gsua5fr5fukrp5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
