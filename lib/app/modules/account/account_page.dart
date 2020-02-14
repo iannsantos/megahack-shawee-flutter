@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
@@ -75,7 +76,7 @@ class _AccountPageState extends ModularState<AccountPage, AccountController> {
                           height: 20,
                         ),
                         Container(
-                          width: 120,
+                          // width: 120,
                           height: 80,
                           decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
@@ -91,7 +92,10 @@ class _AccountPageState extends ModularState<AccountPage, AccountController> {
                                     ? Center(
                                         child: CircularProgressIndicator(),
                                       )
-                                    : Text("Login with Google"),
+                                    : Icon(
+                                        FontAwesome5Brands.google,
+                                        color: Colors.red,
+                                      ),
                                 onPressed: controller.loginWithGoogle,
                               );
                             },

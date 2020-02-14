@@ -1,10 +1,12 @@
+import 'package:bubble_bottom_bar/bubble_bottom_bar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 import 'package:invest_school/app/modules/help/help_module.dart';
 
 import '../account/account_module.dart';
-import '../curses/curses_module.dart';
+import '../courses/courses_module.dart';
 import 'home_controller.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,31 +25,48 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         physics: NeverScrollableScrollPhysics(),
         controller: controller.pageController,
         children: <Widget>[
-          CursesModule(),
+          CoursesModule(),
           HelpModule(),
           AccountModule(),
         ],
       ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: Icon(Icons.monetization_on),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       bottomNavigationBar: Observer(
         builder: (_) {
-          return BottomNavigationBar(
+          return BubbleBottomBar(
+            elevation: 20,
+            borderRadius: BorderRadius.vertical(top: Radius.circular(16)),
+            fabLocation: BubbleBottomBarFabLocation.end,
+            hasNotch: true,
+            opacity: 0.2,
             currentIndex: controller.selectedIndex,
-            items: [
-              BottomNavigationBarItem(
-                title: Text("Curses"),
-                icon: Icon(Icons.school),
+            onTap: controller.changeIndex,
+            items: <BubbleBottomBarItem>[
+              BubbleBottomBarItem(
+                title: Text("Courses"),
+                icon: Icon(Icons.school, color: Colors.red),
+                backgroundColor: Colors.red,
               ),
-              BottomNavigationBarItem(
-                title: Text("Help"),
-                icon: Icon(Icons.help),
+              BubbleBottomBarItem(
+                title: Text("Search"),
+                icon: Icon(Icons.search, color: Colors.red),
+                backgroundColor: Colors.red,
               ),
-              BottomNavigationBarItem(
+              BubbleBottomBarItem(
+                title: Text("Dashboard"),
+                icon: Icon(FontAwesome5.bookmark, color: Colors.blue),
+                backgroundColor: Colors.blue,
+              ),
+              BubbleBottomBarItem(
                 title: Text("Account"),
-                icon: Icon(Icons.account_box),
+                icon: Icon(Icons.person, color: Colors.grey),
+                backgroundColor: Colors.grey,
               ),
             ],
-            elevation: 10,
-            onTap: controller.changeIndex,
           );
         },
       ),
