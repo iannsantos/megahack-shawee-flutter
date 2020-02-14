@@ -23,7 +23,7 @@ class _PlayCoursePageState extends State<PlayCoursePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Color(PRIMARY_COLOR),
+      backgroundColor: Color(COLOR_TWO),
       appBar: AppBar(
         backgroundColor: Colors.transparent,
         elevation: 0,
@@ -46,37 +46,290 @@ class _PlayCoursePageState extends State<PlayCoursePage> {
                 ),
               ],
             ),
-            SizedBox(height: 20),
             Container(
+              margin: EdgeInsets.only(top: 10),
               width: MediaQuery.of(context).size.width - 15,
-              height: MediaQuery.of(context).size.height / 2,
+              height: MediaQuery.of(context).size.height / 1.9,
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(15),
                 color: Colors.white24,
               ),
               child: ListView(
                 children: <Widget>[
-                  SizedBox(
-                    height: 20,
-                  ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                    children: <Widget>[
-                      CircularPercentIndicator(
-                        radius: 50,
-                        backgroundColor: Colors.black12,
-                        progressColor: Colors.white,
-                        percent: 0.3,
-                      ),
-                      Text(
-                        "Conhecendo os investimentos",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
+                  Container(
+                    margin: EdgeInsets.symmetric(vertical: 15),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      children: <Widget>[
+                        CircularPercentIndicator(
+                          radius: 50,
+                          backgroundColor: Colors.black12,
+                          progressColor: Colors.white,
+                          percent: 0.3,
                         ),
-                      ),
-                    ],
+                        Text(
+                          "Conhecendo os investimentos",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 18,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(COLOR_TWO),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 50,
+                          height: 50,
+                          alignment: Alignment.center,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white24,
+                          ),
+                          child: Icon(
+                            Icons.check,
+                            color: Colors.green,
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Principais investimentos no mercado",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(COLOR_TWO),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white24,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "02",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Qual é o melhor pra mim?",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(COLOR_TWO),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white24,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "03",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Preciso ter muito dinheiro para começar?",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(COLOR_TWO),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white24,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "04",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Um pouco de inspiração: como os grandes começaram?",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(COLOR_TWO),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white24,
+                          ),
+                          padding: EdgeInsets.only(top: 13),
+                          child: Text(
+                            "05",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Como saber a hora de investir?",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(bottom: 10, left: 10, right: 10),
+                    padding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(15),
+                      color: Color(COLOR_TWO),
+                    ),
+                    child: Row(
+                      children: <Widget>[
+                        Container(
+                          width: 50,
+                          height: 50,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(25),
+                            color: Colors.white24,
+                          ),
+                          alignment: Alignment.center,
+                          child: Text(
+                            "06",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold,
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                        SizedBox(
+                          width: 15,
+                        ),
+                        Expanded(
+                          child: Text(
+                            "Seu primeiro investimento",
+                            softWrap: true,
+                            maxLines: 2,
+                            style: TextStyle(
+                              color: Colors.white,
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),

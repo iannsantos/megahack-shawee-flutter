@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:invest_school/app/modules/dashboard/dashboard_module.dart';
 import 'package:invest_school/app/modules/help/help_module.dart';
+import 'package:invest_school/app/shared/style/colors.dart';
 
 import '../account/account_module.dart';
 import '../courses/courses_module.dart';
@@ -27,12 +29,17 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
         children: <Widget>[
           CoursesModule(),
           HelpModule(),
+          DashboardModule(),
           AccountModule(),
         ],
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(PRIMARY_COLOR),
         onPressed: () {},
-        child: Icon(Icons.monetization_on),
+        child: Icon(
+          Icons.monetization_on,
+          color: Colors.white,
+        ),
       ),
       floatingActionButtonLocation: FloatingActionButtonLocation.endDocked,
       bottomNavigationBar: Observer(
@@ -48,23 +55,23 @@ class _HomePageState extends ModularState<HomePage, HomeController> {
             items: <BubbleBottomBarItem>[
               BubbleBottomBarItem(
                 title: Text("Courses"),
-                icon: Icon(Icons.school, color: Colors.red),
-                backgroundColor: Colors.red,
+                icon: Icon(Icons.school, color: Colors.blueGrey),
+                backgroundColor: Colors.blueGrey,
               ),
               BubbleBottomBarItem(
                 title: Text("Search"),
-                icon: Icon(Icons.search, color: Colors.red),
-                backgroundColor: Colors.red,
+                icon: Icon(Icons.search, color: Colors.grey),
+                backgroundColor: Colors.grey,
               ),
               BubbleBottomBarItem(
                 title: Text("Dashboard"),
-                icon: Icon(FontAwesome5.bookmark, color: Colors.blue),
+                icon: Icon(FontAwesome.th_large, color: Colors.blue),
                 backgroundColor: Colors.blue,
               ),
               BubbleBottomBarItem(
                 title: Text("Account"),
-                icon: Icon(Icons.person, color: Colors.grey),
-                backgroundColor: Colors.grey,
+                icon: Icon(Icons.person, color: Color(PRIMARY_COLOR)),
+                backgroundColor: Color(PRIMARY_COLOR),
               ),
             ],
           );
