@@ -23,6 +23,16 @@ class AuthRepository extends Disposable {
     return user;
   }
 
+  Future<FirebaseUser> loginWithEmailAndPassword(
+      String email, String password) async {
+    final AuthResult emailUser = await _auth.signInWithEmailAndPassword(
+        email: email, password: password);
+    FirebaseUser user = emailUser.user;
+    print("signed in " + user.displayName);
+
+    return user;
+  }
+
   Future<FirebaseUser> getUser() async {
     return _auth.currentUser();
   }

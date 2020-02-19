@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_icons/flutter_icons.dart';
 import 'package:flutter_mobx/flutter_mobx.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+import 'package:flutter_signin_button/flutter_signin_button.dart';
+import 'package:invest_school/app/shared/style/colors.dart';
 
 import 'account_controller.dart';
 
@@ -21,13 +22,7 @@ class _AccountPageState extends ModularState<AccountPage, AccountController> {
 
     return Scaffold(
         appBar: AppBar(
-          centerTitle: true,
-          title: Text(
-            widget.title,
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+          backgroundColor: Colors.transparent,
           elevation: 0,
         ),
         body: SingleChildScrollView(child: Observer(
@@ -38,23 +33,24 @@ class _AccountPageState extends ModularState<AccountPage, AccountController> {
                   ? Column(
                       children: <Widget>[
                         SizedBox(
-                            height: 120,
-                            width: 120,
-                            child: Image.network(
-                                "https://api.adorable.io/avatars/120/logo.png")),
+                          height: 140,
+                          width: 140,
+                          child: Image.asset("logo.png"),
+                        ),
                         SizedBox(
                           height: 20,
                         ),
                         TextField(
                           controller: _userController,
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8)),
-                              labelText: "Usuário",
-                              labelStyle: TextStyle(
-                                  color: Colors.black38,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20)),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            labelText: "User",
+                            labelStyle: TextStyle(
+                                color: Colors.black38,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20),
+                          ),
                         ),
                         SizedBox(
                           height: 20,
@@ -64,39 +60,78 @@ class _AccountPageState extends ModularState<AccountPage, AccountController> {
                           keyboardType: TextInputType.text,
                           obscureText: true,
                           decoration: InputDecoration(
-                              border: OutlineInputBorder(
-                                  borderRadius: BorderRadius.circular(8)),
-                              labelText: "Senha",
-                              labelStyle: TextStyle(
-                                  color: Colors.black38,
-                                  fontWeight: FontWeight.w400,
-                                  fontSize: 20)),
+                            border: OutlineInputBorder(
+                                borderRadius: BorderRadius.circular(8)),
+                            labelText: "Password",
+                            labelStyle: TextStyle(
+                                color: Colors.black38,
+                                fontWeight: FontWeight.w400,
+                                fontSize: 20),
+                          ),
                         ),
                         SizedBox(
                           height: 20,
                         ),
                         Container(
-                          // width: 120,
-                          height: 80,
-                          decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(25),
-                              gradient: LinearGradient(
-                                  begin: Alignment.topLeft,
-                                  end: Alignment.bottomRight,
-                                  stops: [0.3, 1],
-                                  colors: [Colors.blue, Colors.lightBlue])),
                           child: Observer(
                             builder: (BuildContext context) {
-                              return RaisedButton(
-                                child: controller.loading
-                                    ? Center(
-                                        child: CircularProgressIndicator(),
-                                      )
-                                    : Icon(
-                                        FontAwesome5Brands.google,
-                                        color: Colors.red,
+                              return Column(
+                                children: <Widget>[
+                                  Container(
+                                    height: 50,
+                                    width: 200,
+                                    child: RaisedButton(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(30),
                                       ),
-                                onPressed: controller.loginWithGoogle,
+                                      color: Color(PRIMARY_COLOR),
+                                      padding: EdgeInsets.symmetric(
+                                          vertical: 5, horizontal: 10),
+                                      child: controller.loading
+                                          ? Center(
+                                              child:
+                                                  CircularProgressIndicator(),
+                                            )
+                                          : Text(
+                                              "Sign in",
+                                              style: TextStyle(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                              ),
+                                            ),
+                                      onPressed: () {
+                                        return controller
+                                            .loginWithEmailAndPassword(
+                                                _userController.text
+                                                    .toString()
+                                                    .trim(),
+                                                _passwordController.text
+                                                    .toString());
+                                      },
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 20,
+                                  ),
+                                  SizedBox(
+                                    height: 50,
+                                    width: 200,
+                                    child: controller.loading
+                                        ? Center(
+                                            child: CircularProgressIndicator())
+                                        : SignInButton(
+                                            Buttons.Google,
+                                            padding: EdgeInsets.symmetric(
+                                                vertical: 5, horizontal: 10),
+                                            onPressed:
+                                                controller.loginWithGoogle,
+                                            shape: RoundedRectangleBorder(
+                                              borderRadius:
+                                                  BorderRadius.circular(30),
+                                            ),
+                                          ),
+                                  ),
+                                ],
                               );
                             },
                           ),
@@ -106,15 +141,7 @@ class _AccountPageState extends ModularState<AccountPage, AccountController> {
                   : Center(
                       child: Column(
                         children: <Widget>[
-                          Text("Logado"),
-                          RaisedButton(
-                            child: controller.loading
-                                ? Text("Signout")
-                                : Center(
-                                    child: CircularProgressIndicator(),
-                                  ),
-                            onPressed: controller.signOut,
-                          ),
+                          Text("Logged"),
                         ],
                       ),
                     ),

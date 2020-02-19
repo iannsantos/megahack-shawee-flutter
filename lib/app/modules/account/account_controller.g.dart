@@ -67,6 +67,15 @@ mixin _$AccountController on _AccountBase, Store {
     return _$loginWithGoogleAsyncAction.run(() => super.loginWithGoogle());
   }
 
+  final _$loginWithEmailAndPasswordAsyncAction =
+      AsyncAction('loginWithEmailAndPassword');
+
+  @override
+  Future<dynamic> loginWithEmailAndPassword(String email, String password) {
+    return _$loginWithEmailAndPasswordAsyncAction
+        .run(() => super.loginWithEmailAndPassword(email, password));
+  }
+
   final _$signOutAsyncAction = AsyncAction('signOut');
 
   @override

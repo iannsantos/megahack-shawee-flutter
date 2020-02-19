@@ -38,6 +38,19 @@ abstract class _AccountBase with Store {
   }
 
   @action
+  Future loginWithEmailAndPassword(String email, String password) async {
+    try {
+      loading = true;
+      await _auth.loginWithEmailAndPassword(email, password);
+      loading = false;
+      loggedUser = true;
+    } catch (e) {
+      loading = false;
+      print('error $e');
+    }
+  }
+
+  @action
   Future signOut() async {
     loading = true;
     await _auth.signOut();

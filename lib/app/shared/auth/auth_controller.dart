@@ -26,6 +26,11 @@ abstract class _AuthBase with Store {
   }
 
   @action
+  Future loginWithEmailAndPassword(String email, String password) async {
+    user = await _authRepository.loginWithEmailAndPassword(email, password);
+  }
+
+  @action
   Future signOut() async {
     await _authRepository.signOut();
     user = null;
