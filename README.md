@@ -1,7 +1,19 @@
-# invest_school
+<h1 align="center">
+  <img src="lib/app/assets/logo.png" alt="InvestSchool" width="120">
+<br>
+InvestSchool
+</h1>
 
-This project is the MVP of MegaHack promoted by Shawee.
+<p align="center">This project is the MVP of MegaHack promoted by Shawee.</p>
 
-The APK is avaialbe with the name "investschool.apk".
+<div>
+  <img src="screenshots/1.jpeg" width="200" height="400"> <img src="screenshots/2.jpeg" width="200" height="400"> <img src="screenshots/3.jpeg" width="200" height="400"> <img src="screenshots/4.jpeg" width="200" height="400">
+</div>
 
-<img src="screenshots/1.jpeg" width="200" height="400"> <img src="screenshots/2.jpeg" width="200" height="400"> <img src="screenshots/3.jpeg" width="200" height="400"> <img src="screenshots/4.jpeg" width="200" height="400">
+<hr />
+
+## Features
+This app features all the latest tools and practices in mobile development!
+
+- **Modular** — A smart project structure.
+- **Slidy** — CLI package manager and template for Flutter
